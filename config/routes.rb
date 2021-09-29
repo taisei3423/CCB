@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   get '/board', to: 'board#top'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  #get 'home/top'
+  get '/', to: 'home#top'
 end
