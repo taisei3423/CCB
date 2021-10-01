@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   get 'session/new'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/board', to: 'board#top'
+  #get 'home/top'
+  get '/', to: 'home#top'
 end
