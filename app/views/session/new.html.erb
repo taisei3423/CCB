@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<h1>ログイン</h1>
+<%= form_with url: '/login' do |f| %>
+    <%= f.label :name,'ユーザーネーム' %>
+    <%= f.text_field :account %>
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password %>
+    <%= f.submit "ログイン" %>
+<% end %>
