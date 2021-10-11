@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_015942) do
+ActiveRecord::Schema.define(version: 2021_10_11_024605) do
+
+  create_table "boards", force: :cascade do |t|
+    t.integer "boardtype_id"
+    t.string "nickname"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "boardtypes", force: :cascade do |t|
+    t.string "threadname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "account"

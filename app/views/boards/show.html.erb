@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Boardtype:</strong>
+  <%= @board.boardtype_id %>
+</p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @board.nickname %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @board.comment %>
+</p>
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>

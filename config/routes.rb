@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :boards
   get '/login',  to: 'session#new'
   post '/login',  to: 'session#create'
   delete '/login',  to: 'session#destroy'
