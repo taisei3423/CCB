@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/document7', to: 'document7#top'
   get '/document6', to: 'document6#top'
   get '/document5', to: 'document5#top'
+  delete '/logout',  to: 'session#destroy'
   get '/document4', to: 'document4#top'
   get '/document3', to: 'document3#top'
   get '/document2', to: 'document2#top'

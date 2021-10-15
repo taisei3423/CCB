@@ -1,13 +1,14 @@
 class SessionController < ApplicationController
+  
+  skip_before_action :redirect_login, only: [:new, :create]
+
   def new
   end
 
   def create
     user = User.find_by(account:params[:account].downcase)
     if user && user.password == params[:password]
-      def log_in(user)
-        session[:user_id] = user.user_id
-      end
+      log_in(user)
        redirect_to '/'
     else
       flash[:notice] = "ユーザーネームかパスワードが違います"
@@ -26,4 +27,5 @@ class SessionController < ApplicationController
       :account, :password, :schoolyear, :username, :nickname
     )
   end
+
 end
