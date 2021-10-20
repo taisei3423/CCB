@@ -6,9 +6,17 @@
   <p>
   企業名（部分一致）
   <br>
-  <%= text_field_tag 'search[name]' %><%= submit_tag '検索' %>
+  <%= text_field_tag 'search[name]', session[:search_name] %><%= submit_tag '検索' %>
   </p>
 <% end %>
+
+<%= form_tag('/courses_search') do %>
+  <p>
+  職種（部分一致）
+  <br>
+  <%= text_field_tag 'search[kinds]', session[:search_kinds] %><%= submit_tag '検索' %>
+  </p>
+<% end %>  
 
 <table border="1">
   <tr>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  post '/courses_search', to: 'document4#search'
+  post '/courses4_search', to: 'document4#search'
   post'/document4', to: 'document4#search'
+  post '/courses2_search', to: 'document2#search'
+  post'/document2', to: 'document2#search'
 
   get '/login',  to: 'session#new'
   post '/login',  to: 'session#create'
