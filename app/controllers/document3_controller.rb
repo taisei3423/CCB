@@ -1,5 +1,5 @@
 class Document3Controller < ApplicationController
   def top
-    @courses = Course.all
+    @courses = Course.left_joins( :middles ).where( :middles => { :kubun_id => 1 } ).order(:created_at => "desc")
   end
 end

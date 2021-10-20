@@ -9,10 +9,10 @@ class Document4Controller < ApplicationController
     else
       @courses = Course.all.order(:created_at => "desc")
     end
+    @courses = Course.left_joins( :middles ).where( :middles => { :kubun_id => 18 } ).order(:created_at => "desc")
   end
 
   def search
-    @courses = Course.all
 
     if params[:search][:name].present?
       @courses = Course.where("name like '%" + params[:search][:name] + "%'").order(:created_at => "desc")
@@ -25,7 +25,11 @@ class Document4Controller < ApplicationController
       @courses = Course.all.order(:created_at => "desc")
       session[:search_name] = nil
       session[:search_kinds] = nil
+      @courses = Course.left_joins( :middles ).where("name like '%" + params[:search][:name] + "%'").where( :middles => { :kubun_id => 18 }).order(:created_at => "desc")
+    else
+      @courses = Course.left_joins( :middles ).where( :middles => { :kubun_id => 18 } ).order(:created_at => "desc")
     end
     render :top
   end
+
 end
