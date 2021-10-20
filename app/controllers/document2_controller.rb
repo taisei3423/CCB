@@ -1,16 +1,6 @@
 class Document2Controller < ApplicationController
   def top
     @courses = Course.all
-
-    if session[:search_kinds].present?
-      @courses = Course.where("kinds like '%" + session[search_kinds]+ "%'").order(created_at => "desc")
-    elsif session[:search_kinds].present?
-      @courses = Course.where("kinds like '%" + session[search_kinds]+ "%'").order(created_at => "desc")
-    elsif session[:search_name].present?
-      @courses = Course.where("name like '%" + session[search_name]+ "%'").order(created_at => "desc")
-    else
-      @courses = Course.all.order(:created_at => "desc")
-    end
   end
 
   def search
