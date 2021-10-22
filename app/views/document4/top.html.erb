@@ -2,13 +2,21 @@
 <p> <%= link_to '戻る', '/document' %> </p>
 <p> <%= link_to 'ホーム', '/' %> </p>
 
-<%= form_tag('/courses_search') do %>
+<%= form_tag('/courses4_search') do %>
   <p>
   企業名（部分一致）
   <br>
-  <%= text_field_tag 'search[name]' %><%= submit_tag '検索' %>
+  <%= text_field_tag 'search[name]', session[:search_name] %><%= submit_tag '検索' %>
   </p>
 <% end %>
+
+<%= form_tag('/courses4_search') do %>
+  <p>
+  職種（部分一致）
+  <br>
+  <%= text_field_tag 'search[kinds]', session[:search_kinds] %><%= submit_tag '検索' %>
+  </p>
+<% end %>  
 
 <table border="1">
   <tr>
@@ -25,7 +33,7 @@
       <td><%= course.year %></td>
       <td><%= course.contents %></td>
       <td><%= course.remarks %></td>
-      <td><%= course.create_at %></td>
+      <td><%= course.created_at %></td>
     </tr>
   <% end %>
 </table>
