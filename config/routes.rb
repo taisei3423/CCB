@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  patch '/user_update', to: 'user#update'
+  get '/user_top', to: 'user#top'
   post '/courses_search', to: 'document4#search'
   post'/document4', to: 'document4#search'
 
