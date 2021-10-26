@@ -1,9 +1,12 @@
 class BoardsController < ApplicationController
+  
   before_action :set_board, only: %i[ show edit update destroy ]
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
+    @user = current_user
+    @boardtype_id = params[:boardtype_id]
+    @boards = Board.where(boardtype_id: @boardtype_id).order(credated_at: "ASC")
   end
 
   # GET /boards/1 or /boards/1.json
@@ -21,15 +24,15 @@ class BoardsController < ApplicationController
 
   # POST /boards or /boards.json
   def create
-    @board = Board.new(board_params)
+    @board = Board.new()
+    @board.comment = params[:comment]
+    @board.nickname = params[:nickname]
+    @board.boardtype_id = params[:boardtype_id]
 
     respond_to do |format|
       if @board.save
         format.html { redirect_to @board, notice: "Board was successfully created." }
         format.json { render :show, status: :created, location: @board }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
       end
     end
   end
