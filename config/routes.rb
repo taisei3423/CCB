@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tests
   post '/courses4_search', to: 'document4#search'
   post'/document4', to: 'document4#search'
   post '/courses2_search', to: 'document2#search'
