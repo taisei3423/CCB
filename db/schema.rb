@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_10_26_022403) do
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "course"
+    t.text "detail"
   end
 
 end
