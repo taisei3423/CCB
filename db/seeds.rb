@@ -12,6 +12,7 @@ User.create(account: 's20191424', password: 2766, schoolyear: 3, username: '錦�
 User.create(account: 's20191415', password: 3504, schoolyear: 3, username: '佐藤祐介', nickname: '主将')
 User.create(account: 's20191403', password: 3845, schoolyear: 3, username: '井上文杏希', nickname: 'ニンニク')
 User.create(account: 's20191431', password: 3176, schoolyear: 3, username: '福山沙奈', nickname: 'ぽてと')
+User.create(account: 's00000000', password: 0000, schoolyear: 0, username: '架空の先生', nickname: 'せんせい')
 
 CSV.foreach('db/course2.csv') do |row|
   Course.create(:name => row[0], :kinds => row[1], :year => row[2], :contents => row[3], :remarks => row[4])

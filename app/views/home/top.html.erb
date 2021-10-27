@@ -1,6 +1,10 @@
 <table width=100% align="center">
   <tr hight=30% width=100%>
+  <% if @user.schoolyear >= 1 %>
     <td align="center"><%= link_to '掲示板', '/board' %></td>
+    <% else %>
+    <td align="center">掲示板</td>
+    <% end %> 
     <td align="center"><%= link_to '進路資料', '/document' %></td>
   </tr>
   <tr>
