@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :submissions
   resources :tests
 
   patch '/user_update', to: 'user#update'
