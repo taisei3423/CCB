@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   post'/document4', to: 'document4#search'
   post '/courses2_search', to: 'document2#search'
   post'/document2', to: 'document2#search'
+  post '/courses_search', to: 'document#search'
+  post'/document', to: 'document#search'
+
 
   get '/login',  to: 'session#new'
   post '/login',  to: 'session#create'
   delete '/login',  to: 'session#destroy'
+  get '/document9', to: 'document9#top'
   get '/document8', to: 'document8#top'
   get '/document7', to: 'document7#top'
   get '/document6', to: 'document6#top'
