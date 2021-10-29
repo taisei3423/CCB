@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :submissions
+  resources :tests
+
+  patch '/user_update', to: 'user#update'
+  get '/user_top', to: 'user#top'
   post '/courses4_search', to: 'document4#search'
   post'/document4', to: 'document4#search'
   post '/courses2_search', to: 'document2#search'

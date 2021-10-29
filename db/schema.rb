@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_11_014208) do
+ActiveRecord::Schema.define(version: 2021_10_29_023230) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,30 @@ ActiveRecord::Schema.define(version: 2021_10_11_014208) do
   create_table "middles", force: :cascade do |t|
     t.integer "course_id"
     t.integer "kubun_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.string "title"
+    t.date "deadline"
+    t.string "remarks"
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "title"
+    t.date "deadline"
+    t.date "day"
+    t.string "department"
+    t.integer "price"
+    t.integer "one"
+    t.integer "two"
+    t.integer "three"
+    t.string "person"
+    t.string "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
