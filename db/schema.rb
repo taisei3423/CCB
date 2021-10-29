@@ -36,6 +36,30 @@ ActiveRecord::Schema.define(version: 2021_10_29_024330) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "submissions", force: :cascade do |t|
+    t.string "title"
+    t.date "deadline"
+    t.string "remarks"
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "title"
+    t.date "deadline"
+    t.date "day"
+    t.string "department"
+    t.integer "price"
+    t.integer "one"
+    t.integer "two"
+    t.integer "three"
+    t.string "person"
+    t.string "detail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "account"
     t.string "password"
@@ -44,9 +68,12 @@ ActiveRecord::Schema.define(version: 2021_10_29_024330) do
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.integer "course"
     t.text "detail"
     t.string "furigana"
+=======
+>>>>>>> 48ed74c692894ac1d65bd36a8f53b016ec5725ba
   end
 
 end

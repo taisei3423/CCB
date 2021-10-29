@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">検定案内</h1>
+
+
+
+<table>
+  <thead>
+
+  <tr>
+    <td align="center"></tb>
+    <td align="center"></tb>
+    <td align="center"></tb>
+    <td align="center"></tb>
+    <th align="center">------</th>
+    <th align="center">値段</th>
+    <th align="center">------</th>
+  </tr>
+
+    <tr>
+      <th>検定名</th>
+      <th>締切</th>
+      <th>検定日</th>
+      <th>部門</th>
+      <th>1級</th>
+      <th>2級</th>
+      <th>3級</th>
+      <th>担当教員</th>
+      <th>備考・詳細</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tests.each do |test| %>
+      <tr>
+        <td><%= test.title %></td>
+        <td><%= test.deadline %></td>
+        <td><%= test.day %></td>
+        <td><%= test.department %></td>
+        <td align="center"><%= test.one %></td>
+        <td align="center"><%= test.two %></td>
+        <td align="center"><%= test.three %></td>
+        <td><%= test.person %></td>
+        <td><%= test.detail %></td>
+
+        <% if @user.schoolyear == 0 %>
+          <td><%= link_to '詳細', test %></td>
+          <td><%= link_to '編集', edit_test_path(test) %></td>
+          <td><%= link_to '削除', test, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <% else %>
+          <td><%= link_to '詳細', test %></td>
+        <% end %> 
+
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<% if @user.schoolyear == 0 %>
+  <%= link_to '新規作成', new_test_path %>
+<% end %> 
+
+<p> <%= link_to '戻る', '/guidance' %> </p>
+<p> <%= link_to 'ホーム', '/' %> </p>
