@@ -9,9 +9,18 @@
     <td align="center"><%= link_to '大学', '/document2' %></tb>
     <td align="center"><%= link_to '就職', '/document4' %></tb>
   </tr>
-  <tr>
-  <td align="center"></tb>
-    <td align="center">専門学校</tb>
+  <tr> 
+    <td align="center"></tb>
+    <td align="center">
+      <%= form_tag('/document', id: 'kubun_form') do %>
+        <p>
+        専門学校
+        <br>
+        <%= collection_select :kubun, :id, Kubun.where(code:30...40), :id, :name %><%= submit_tag '検索' %>
+        </p>
+      <% end %>
+    </td>
   </tr>
+
 </table>
 <p> <%= link_to '戻る', '/' %> </p>

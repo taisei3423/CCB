@@ -1,0 +1,23 @@
+<h1 align="center">進路資料　専門学校</h1>
+<p> <%= link_to '戻る', '/document' %> </p>
+<p> <%= link_to 'ホーム', '/' %> </p>
+
+<table border="1">
+  <tr>
+    <th>学校名</th>
+    <th>学科名</th>
+    <th>年度</th>
+    <th>試験内容</th>
+    <th>備考</th>
+    <th>登録日時</th>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.kinds %></td>
+      <td><%= course.year %></td>
+      <td><%= course.contents %></td>
+      <td><%= course.remarks %></td>
+      <td><%= course.created_at %></td>
+    </tr>
+  <% end %>
+</table>
