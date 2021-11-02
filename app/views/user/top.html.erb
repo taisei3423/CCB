@@ -1,0 +1,29 @@
+<h1 align="center">プロフィール</h1>
+
+<%= flash[:user_profile] %>
+
+<%= form_with model: @user, url: {controller: 'user', action: 'update' } do |f|%>
+    <%= f.label :account,'ユーザーネーム' %>
+    <td><%= @user.account %></td>
+    <%= f.label :schoolyear,'学年' %>
+    <td><%= @user.schoolyear %>年</td>
+    <%= f.label :nickname,'ニックネーム' %>
+    
+    <%= f.text_field :nickname %>
+    <%= f.label :detail,'詳細' %>
+    
+    <%= f.text_field :detail %>
+    <%= f.label :course, '進路' %>
+    
+    <%= f.radio_button :course, :'1' %>
+    <%= f.label :course, "進学", {value: :'1', style: "display: inline-block;"} %>
+    <%= f.radio_button :course, :'2' %>
+    <%= f.label :course, "就職", {value: :'2', style: "display: inline-block;"} %>
+    <%= f.radio_button :course, :'3' %>
+    <%= f.label :course, "公務員", {value: :'3', style: "display: inline-block;"} %>
+    <%= f.radio_button :course, :'4' %>
+    <%= f.label :course, "未決定", {value: :'4', style: "display: inline-block;"} %>
+    <%= f.submit "更新" %>
+<% end %>
+
+<p> <%= link_to '戻る', '/' %> </p>
