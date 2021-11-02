@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post '/courses4_search', to: 'document4#search'
   post'/document4', to: 'document4#search'
   post '/courses2_search', to: 'document2#search'
-  post'/document2', to: 'document2#search'
+  get '/document2_search', to: 'document2#search'
+  post '/document2', to:'document2#search'
   post '/courses_search', to: 'document#search'
   post'/document', to: 'document#search'
 
