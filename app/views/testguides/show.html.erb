@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>画像</strong>
+  <%= @testguide.filename %>
+</p>
+
+<p>
+  <strong>学年</strong>
+  <%= @testguide.year %>
+</p>
+
+<%= link_to '編集', edit_testguide_path(@testguide) %> |
+<%= link_to '戻る', testguides_path %>

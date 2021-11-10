@@ -10,19 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_024330) do
+ActiveRecord::Schema.define(version: 2021_11_10_021718) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "name"
-    t.string "kinds"
-    t.string "year"
-    t.string "contents"
-    t.string "remarks"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
     t.string "name"
     t.string "kinds"
     t.string "year"
@@ -46,10 +36,24 @@ ActiveRecord::Schema.define(version: 2021_10_29_024330) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.string "filename"
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.string "title"
     t.date "deadline"
     t.string "remarks"
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "testguides", force: :cascade do |t|
+    t.string "filename"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -78,12 +82,9 @@ ActiveRecord::Schema.define(version: 2021_10_29_024330) do
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
     t.integer "course"
     t.text "detail"
     t.string "furigana"
-=======
->>>>>>> 48ed74c692894ac1d65bd36a8f53b016ec5725ba
   end
 
 end

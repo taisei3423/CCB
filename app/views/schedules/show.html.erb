@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>題名</strong>
+  <%= @schedule.filename %>
+</p>
+
+<p>
+  <strong>学年</strong>
+  <%= @schedule.year %>
+</p>
+
+<% if @user.schoolyear == 0 %>
+  <%= link_to '編集', edit_schedule_path(@schedule) %> |
+<% end %>
+
+<%= link_to '戻る', schedules_path %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :testguides
+  resources :schedules
   resources :submissions
   resources :tests
 
