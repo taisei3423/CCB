@@ -1,4 +1,5 @@
 class Document2Controller < ApplicationController
+  protect_from_forgery
   def top
     @courses = Course.all
   end
