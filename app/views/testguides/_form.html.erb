@@ -16,7 +16,7 @@
     <%= form.file_field :filename %>
     <% if testguide.filename.present? %>
       <br>
-      <%= testguide.filename %>
+      <%= image_tag "/assets/ #{testguide.filename}" %>
     <% end %>
   </div>
 

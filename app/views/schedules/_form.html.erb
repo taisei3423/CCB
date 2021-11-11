@@ -17,7 +17,7 @@
     <%= form.file_field :filename %>
     <% if schedule.filename.present? %>
       <br>
-      <%= schedule.filename %>
+      <%= image_tag "/assets/ #{schedule.filename}" %>
     <% end %>
   </div>
 
