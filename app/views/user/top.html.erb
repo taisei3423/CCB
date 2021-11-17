@@ -5,16 +5,17 @@
 <%= form_with model: @user, url: {controller: 'user', action: 'update' } do |f|%>
     <%= f.label :account,'ユーザーネーム' %>
     <td><%= @user.account %></td>
+
     <%= f.label :schoolyear,'学年' %>
     <td><%= @user.schoolyear %>年</td>
+
     <%= f.label :nickname,'ニックネーム' %>
-    
     <%= f.text_field :nickname %>
+
     <%= f.label :detail,'詳細' %>
-    
     <%= f.text_field :detail %>
+
     <%= f.label :course, '進路' %>
-    
     <%= f.radio_button :course, :'1' %>
     <%= f.label :course, "進学", {value: :'1', style: "display: inline-block;"} %>
     <%= f.radio_button :course, :'2' %>
