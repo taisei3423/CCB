@@ -1,0 +1,2 @@
+class Testguide < ApplicationRecord
+end
