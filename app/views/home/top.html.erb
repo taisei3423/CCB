@@ -15,4 +15,11 @@
     <td align="center"><%= link_to'プロフィール', '/user_top' %></td>
     <td align="center"><%= link_to 'ログアウト',logout_path,method: :delete %></td>
   </tr>
+
+  <% if @user.IsTeacher? %>
+    <tr>
+      <td align="center"><%= link_to'進路資料追加', '/document_edit' %></td>
+    </tr>
+  <% end %>
+
 </table>

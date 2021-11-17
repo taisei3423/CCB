@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<h1 align="center">進路資料　アップロード</h1>
+
+<%= form_tag('document_update', multipart: true) do %>
+  <div class="field" >
+    <%= label_tag '資料追加' %>
+    <%= file_field_tag :filename %>
+    <%= submit_tag 'アップロード' %>
+  </div>
+<% end %>
+<p> <%= link_to '戻る', '/' %> </p>

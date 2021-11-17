@@ -2,6 +2,22 @@
 <p> <%= link_to '戻る', '/document2' %> </p>
 <p> <%= link_to 'ホーム', '/' %> </p>
 
+<%= form_tag('/courses7_search') do %>
+  <p>
+  学校名（部分一致）
+  <br>
+  <%= text_field_tag 'search[name]', session[:search_name] %><%= submit_tag '検索' %>
+  </p>
+<% end %>
+
+<%= form_tag('/courses7_search') do %>
+  <p>
+  学科名（部分一致）
+  <br>
+  <%= text_field_tag 'search[kinds]', session[:search_kinds] %><%= submit_tag '検索' %>
+  </p>
+<% end %>  
+
 <table border="1">
   <tr>
     <th>学校名</th>
