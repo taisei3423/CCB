@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2021_11_10_021718) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string "name"
+    t.string "kinds"
+    t.string "year"
+    t.string "contents"
+    t.string "remarks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "kubuns", force: :cascade do |t|
     t.integer "code"
     t.string "name"
