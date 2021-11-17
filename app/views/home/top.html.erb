@@ -1,10 +1,10 @@
 <table width=100% align="center">
   <tr hight=30% width=100%>
-  <% if @user.schoolyear >= 1 %>
+  <% if @user.IsTeacher? %>
+    <td align="center"><%= link_to'進路資料追加', '/document_edit' %></td>
+  <% else %>
     <td align="center"><%= link_to '掲示板', '/board' %></td>
-    <% else %>
-    <td align="center">掲示板</td>
-    <% end %> 
+  <% end %> 
     <td align="center"><%= link_to '進路資料', '/document' %></td>
   </tr>
   <tr>
@@ -15,11 +15,5 @@
     <td align="center"><%= link_to'プロフィール', '/user_top' %></td>
     <td align="center"><%= link_to 'ログアウト',logout_path,method: :delete %></td>
   </tr>
-
-  <% if @user.IsTeacher? %>
-    <tr>
-      <td align="center"><%= link_to'進路資料追加', '/document_edit' %></td>
-    </tr>
-  <% end %>
 
 </table>
