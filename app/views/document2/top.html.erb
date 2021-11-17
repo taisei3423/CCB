@@ -9,51 +9,26 @@
 　</tr>
 
   <tr>
+    <td align="center"><%= link_to '国公立', document6_path(document: 'yonen') %></tb>
+    <td align="center"><%= link_to '４年制大学', '/document5' %></tb>
+    <td align="center"><%= link_to '短期大学', '/document7' %></tb>
+    <td align="center"><%= link_to '国公立', document8_path(document: 'tannki') %></tb>
+  </tr>
+
+  <tr>
+    <td align="center">私立</tb>
+    <td align="center"></tb>
+    <td align="center"></tb>
+    <td align="center">私立</tb>
+  </tr>
+
+  <tr>
     <td align="center">
       <%= form_tag('/document2') do %>
         <p>
         学部名（部分一致）
         <br>
         <%= text_field_tag 'search[kinds]', session[:search_kinds] %><%= submit_tag '検索' %>
-        </p>
-        <%= hidden_field_tag :kubun, 21 %>
-      <% end %>
-    </tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center">
-      <%= form_tag('/document2') do %>
-        <p>
-        学科名（部分一致）
-        <br>
-        <%= text_field_tag 'search[kinds2]', session[:search_kinds2] %><%= submit_tag '検索' %>
-        </p>
-        <%= hidden_field_tag :kubun, 22 %>
-      <% end %>
-    </tb>
-  </tr>
-
-  <tr>
-    <td align="center"><%= link_to '国公立', '/document6' %></tb>
-    <td align="center"><%= link_to '４年制大学', document5_path(document: 'yonen') %></tb>
-    <td align="center"><%= link_to '短期大学', document7_path(documnet: 'tannki') %></tb>
-    <td align="center"><%= link_to '国公立', '/document8' %></tb>
-  </tr>
-
-  <tr>
-    <td align="center">私立</tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center">私立</tb>
-  </tr>
-
-  <tr>
-    <td align="center">
-      <%= form_tag('/document2') do %>
-        <p>
-        学部名（部分一致）
-        <br>
-        <%= text_field_tag 'search[kinds3]', session[:search_kinds3] %><%= submit_tag '検索' %>
         </p>
         <%= hidden_field_tag :kubun, 212 %>
       <% end %>
@@ -65,7 +40,7 @@
         <p>
         学科名（部分一致）
         <br>
-        <%= text_field_tag 'search[kinds4]', session[:search_kinds4] %><%= submit_tag '検索' %>
+        <%= text_field_tag 'search[kinds2]', session[:search_kinds2] %><%= submit_tag '検索' %>
         </p>
         <%= hidden_field_tag :kubun, 222 %>
       <% end %>
