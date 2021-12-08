@@ -12,7 +12,9 @@
     <td align="center"><%= link_to '個別トーク', '/talk' %></td>
   </tr>
   <tr>
-    <td align="center"><%= link_to'プロフィール', '/user_top' %></td>
+    <%= form_tag ('/user_top') do %>
+      <td align="center"><%= submit_tag 'プロフィール'%></td>
+    <% end %>
     <td align="center"><%= link_to 'ログアウト',logout_path,method: :delete %></td>
   </tr>
 
