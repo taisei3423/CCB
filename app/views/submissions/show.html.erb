@@ -12,7 +12,7 @@
 
 <p>
   <strong>備考</strong>
-  <%= @submission.remarks %>
+  <%= safe_join(@submission.remarks.split("\n"),tag(:br)) %>
 </p>
 
 <% if @user.schoolyear == 0 %>

@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1 align="center">提出物</h1>
+<br>
+<br>
 
-<table>
+<table align="center" border="1">
   <thead>
     <tr>
       <th>提出物</th>
@@ -20,7 +22,7 @@
       <tr>
         <td><%= submission.title %></td>
         <td><%= submission.deadline %></td>
-        <td><%= submission.remarks %></td>
+        <td><%= safe_join(submission.remarks.split("\n"),tag(:br)) %></td>
         <% if @user.schoolyear == 0 %>
           <td><%= submission.year %></td>
         <% end %>

@@ -1,23 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1 align="center">検定案内</h1>
+<br>
+<br>
 
 
-
-<table>
+<table align="center" border="1">
   <thead>
-
-  <tr>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <th align="center">------</th>
-    <th align="center">値段</th>
-    <th align="center">------</th>
-  </tr>
-
-    <tr>
       <th>検定名</th>
       <th>締切</th>
       <th>検定日</th>
@@ -42,7 +31,7 @@
         <td align="center"><%= test.two %></td>
         <td align="center"><%= test.three %></td>
         <td><%= test.person %></td>
-        <td><%= test.detail %></td>
+        <td><%= safe_join(test.detail.split("\n"),tag(:br)) %></td>
 
         <% if @user.schoolyear == 0 %>
           <td><%= link_to '詳細', test %></td>

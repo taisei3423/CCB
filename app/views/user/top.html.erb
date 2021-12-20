@@ -3,17 +3,26 @@
 <%= flash[:user_profile] %>
 
 <%= form_with model: @user, url: {controller: 'user', action: 'update' } do |f|%>
+    <br>
     <%= f.label :account,'ユーザーネーム' %>
     <td><%= @user.account %></td>
+    <br>
+    <br>
 
     <%= f.label :schoolyear,'学年' %>
     <td><%= @user.schoolyear %>年</td>
+    <br>
+    <br>
 
     <%= f.label :nickname,'ニックネーム' %>
     <%= f.text_field :nickname %>
+    <br>
+    <br>
 
     <%= f.label :detail,'詳細' %>
     <%= f.text_field :detail %>
+    <br>
+    <br>
 
     <%= f.label :course, '進路' %>
     <%= f.radio_button :course, :'1' %>
