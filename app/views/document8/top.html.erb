@@ -1,6 +1,6 @@
-<h1 align="center">進路資料　国公立</h1>
-<p> <%= link_to '戻る', '/document2' %> </p>
-<p> <%= link_to 'ホーム', '/' %> </p>
+<h1 align="center"><%= @name %></h1>
+<td align="center"><%= button_to "戻る", {controller: 'document2', action: 'top'}, {method: :get, class: :back} %></td>
+<td align="center"><%= button_to "ホーム", {controller: 'home', action: 'top'}, {method: :get, class: :home} %></td>
 
 <table border="1">
   <tr>

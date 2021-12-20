@@ -1,25 +1,28 @@
 <h1 align="center">大学</h1>
 
 <table width=100% align="center">
+  <tr>
+    <td align="center"><%= button_to "戻る", {controller: 'document', action: 'top'}, {method: :get, class: :back} %></td>
+  </tr>
   <tr hight=30% width=100%>
-    <td align="center">４年制大学</tb>
+    <td align="center"><span class="tag">４年制大学</span></tb>
     <td align="center"></tb>
     <td align="center"></tb>
-    <td align="center">短期大学</tb>
+    <td align="center"><span class="tag">短期大学</span></tb>
 　</tr>
 
   <tr>
     <td align="center"><%= link_to '国公立', document6_path(document: 'yonen') %></tb>
-    <td align="center"><%= link_to '４年制大学', '/document5' %></tb>
-    <td align="center"><%= link_to '短期大学', '/document7' %></tb>
+    <td align="center"><%= button_to "４年制大学", {controller: 'document5', action: 'top'}, {method: :get, class: :document2} %></tb>
+    <td align="center"><%= button_to "短期大学", {controller: 'document7', action: 'top'}, {method: :get, class: :document2} %></tb>
     <td align="center"><%= link_to '国公立', document8_path(document: 'tannki') %></tb>
   </tr>
 
   <tr>
-    <td align="center">私立</tb>
+    <td align="center"><span class="tag">私立</span></tb>
     <td align="center"></tb>
     <td align="center"></tb>
-    <td align="center">私立</tb>
+    <td align="center"><span class="tag">私立</span></tb>
   </tr>
 
   <tr>
@@ -72,4 +75,3 @@
     </tb>
   </tr>
 </table>
-<p> <%= link_to '戻る', '/document' %> </p>

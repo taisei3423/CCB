@@ -3,6 +3,7 @@ class Document6Controller < ApplicationController
 
     if params[:document].present?
       @courses = Course.left_joins( :middles ).where( :middles => { :kubun_id => 4 } ).order(:created_at => "desc")
+      @name = "国公立"
     elsif ! session[:search_kinds].nil?
       @courses = Course.left_joins( :middles ).where("kinds like '%" + session[:search_kinds] + "%'").where( :middles => { :kubun_id => 5 }).order(:created_at => "desc")
     elsif ! session[:search_name].nil?

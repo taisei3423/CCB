@@ -1,3 +1,27 @@
 // Place all the styles related to the document controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h1 {
+    font-size: 50px ;
+    margin: 60px 10px;
+}
+
+.tag {
+    font-size: 30px ;
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}
+
+.document {
+    width: 250px ;
+    height: 250px ;
+    padding: 10px ;
+    font-size: 50px ;
+    margin: 40px 10px;
+}
+
+.back {
+    width: 60px ;
+    height: 45px ;
+    padding: 5px ;
+    font-size: 20px ;
+}
