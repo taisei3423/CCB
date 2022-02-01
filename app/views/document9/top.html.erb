@@ -1,0 +1,23 @@
+<h1 align="center">専門学校</h1>
+<td align="center"><%= button_to "戻る", {controller: 'document', action: 'top'}, {method: :get, class: :back} %></td>
+<td align="center"><%= button_to "ホーム", {controller: 'home', action: 'top'}, {method: :get, class: :home} %></td>
+
+<table border="1">
+  <tr>
+    <th>学校名</th>
+    <th>学科名</th>
+    <th>年度</th>
+    <th>試験内容</th>
+    <th>備考</th>
+    <th>登録日時</th>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.kinds %></td>
+      <td><%= course.year %></td>
+      <td><%= course.contents %></td>
+      <td><%= course.remarks %></td>
+      <td><%= course.created_at %></td>
+    </tr>
+  <% end %>
+</table>

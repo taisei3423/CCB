@@ -1,0 +1,32 @@
+<%= form_with(model: schedule) do |form| %>
+  <% if schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= schedule.errors.count %>つのエラーがあります</h2>
+
+      <ul>
+        <% schedule.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :画像 %>
+    <%= form.file_field :filename %>
+    <% if schedule.filename.present? %>
+      <br>
+      <%= image_tag "/assets/ #{schedule.filename}" %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学年 %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録する"%>
+  </div>
+<% end %>

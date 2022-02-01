@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>検定名</strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong>申込締切</strong>
+  <%= @test.deadline %>
+</p>
+
+<p>
+  <strong>検定日</strong>
+  <%= @test.day %>
+</p>
+
+<p>
+  <strong>部門</strong>
+  <%= @test.department %>
+</p>
+
+<p>
+  <strong>値段</strong>
+</p>
+
+<p>
+  <strong>１級</strong>
+  <%= @test.one %>
+</p>
+
+<p>
+  <strong>２級</strong>
+  <%= @test.two %>
+</p>
+
+<p>
+  <strong>３級</strong>
+  <%= @test.three %>
+</p>
+
+<p>
+  <strong>担当教員</strong>
+  <%= @test.person %>
+</p>
+
+<p>
+  <strong>備考・詳細</strong>
+  <br>
+  <%= safe_join(@test.detail.split("\n"),tag(:br)) %>
+</p>
+
+<% if @user.schoolyear == 0 %>
+<%= link_to '編集', edit_test_path(@test) %> |
+<% end %> 
+
+<%= link_to '戻る', tests_path %>

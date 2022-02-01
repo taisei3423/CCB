@@ -1,12 +1,29 @@
 <h1 align="center">大学</h1>
 
 <table width=100% align="center">
+  <tr>
+    <td align="center"><%= button_to "戻る", {controller: 'document', action: 'top'}, {method: :get, class: :back} %></td>
+  </tr>
   <tr hight=30% width=100%>
-    <td align="center">４年制大学</tb>
+    <td align="center"><span class="tag">４年制大学</span></tb>
     <td align="center"></tb>
     <td align="center"></tb>
-    <td align="center">短期大学</tb>
+    <td align="center"><span class="tag">短期大学</span></tb>
 　</tr>
+
+  <tr>
+    <td align="center"><%= link_to '国公立', document6_path(document: 'yonen') %></tb>
+    <td align="center"><%= button_to "４年制大学", {controller: 'document5', action: 'top'}, {method: :get, class: :document2} %></tb>
+    <td align="center"><%= button_to "短期大学", {controller: 'document7', action: 'top'}, {method: :get, class: :document2} %></tb>
+    <td align="center"><%= link_to '国公立', document8_path(document: 'tannki') %></tb>
+  </tr>
+
+  <tr>
+    <td align="center"><span class="tag">私立</span></tb>
+    <td align="center"></tb>
+    <td align="center"></tb>
+    <td align="center"><span class="tag">私立</span></tb>
+  </tr>
 
   <tr>
     <td align="center">
@@ -15,45 +32,6 @@
         学部名（部分一致）
         <br>
         <%= text_field_tag 'search[kinds]', session[:search_kinds] %><%= submit_tag '検索' %>
-        </p>
-        <%= hidden_field_tag :kubun, 21 %>
-      <% end %>
-    </tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center">
-      <%= form_tag('/document2') do %>
-        <p>
-        学科名（部分一致）
-        <br>
-        <%= text_field_tag 'search[kinds2]', session[:search_kinds2] %><%= submit_tag '検索' %>
-        </p>
-        <%= hidden_field_tag :kubun, 22 %>
-      <% end %>
-    </tb>
-  </tr>
-
-  <tr>
-    <td align="center"><%= link_to '国公立', '/document6' %></tb>
-    <td align="center"><%= link_to '４年制大学', '/document5' %></tb>
-    <td align="center"><%= link_to '短期大学', '/document7' %></tb>
-    <td align="center"><%= link_to '国公立', '/document8' %></tb>
-  </tr>
-
-  <tr>
-    <td align="center">私立</tb>
-    <td align="center"></tb>
-    <td align="center"></tb>
-    <td align="center">私立</tb>
-  </tr>
-
-  <tr>
-    <td align="center">
-      <%= form_tag('/document2') do %>
-        <p>
-        学部名（部分一致）
-        <br>
-        <%= text_field_tag 'search[kinds3]', session[:search_kinds3] %><%= submit_tag '検索' %>
         </p>
         <%= hidden_field_tag :kubun, 212 %>
       <% end %>
@@ -65,7 +43,7 @@
         <p>
         学科名（部分一致）
         <br>
-        <%= text_field_tag 'search[kinds4]', session[:search_kinds4] %><%= submit_tag '検索' %>
+        <%= text_field_tag 'search[kinds2]', session[:search_kinds2] %><%= submit_tag '検索' %>
         </p>
         <%= hidden_field_tag :kubun, 222 %>
       <% end %>
@@ -86,7 +64,7 @@
     <td align="center"></tb>
     <td align="center"></tb>
     <td align="center">
-      <%= form_tag('document2') do %>
+      <%= form_tag('document2_search', method: :get) do %>
         <p>
         学校名（部分一致）
         <br>
@@ -97,4 +75,3 @@
     </tb>
   </tr>
 </table>
-<p> <%= link_to '戻る', '/document' %> </p>

@@ -1,14 +1,31 @@
 <table width=100% align="center">
   <tr hight=30% width=100%>
-    <td align="center"><%= link_to '掲示板', '/board' %></td>
-    <td align="center"><%= link_to '進路資料', '/document' %></td>
+    <% if @user.IsTeacher? %>
+      <td align="center"><%= link_to image_tag("document2.png", width: '50%', height: '50%'), "/document_edit" %></td>
+      <td align="center"><%= link_to image_tag("document.png", width: '50%', height: '50%'), "/document" %></td>
+      <tr>
+        <td align="center">進路資料追加</td>
+        <td align="center">進路資料</td>
+    <% else %>
+      <td align="center"><%= link_to image_tag("board.png", width: '50%', height: '50%'), "/board" %></td>
+      <td align="center"><%= link_to image_tag("document.png", width: '50%', height: '50%'), "/document" %></td>
+      <tr>
+        <td align="center">掲示板</td>
+        <td align="center">進路資料</td>
+      </tr>
+  
+    <% end %> 
   </tr>
   <tr>
-    <td align="center"><%= link_to '検定・予定・提出物', '/guidance' %></td>
-    <td align="center"><%= link_to '個別トーク', '/talk' %></td>
+    <td align="center"><%= link_to image_tag("guidance.png", width: '50%', height: '50%'), "/guidance" %></td>
+    <td align="center"><%= link_to image_tag("talk.png", width: '35%', height: '35%'), "/talk" %></td>
+  <tr>
+    <td align="center">検定・予定・提出物</td>
+    <td align="center">個別トーク</td>
   </tr>
   <tr>
-    <td align="center"><%= link_to'プロフィール', '/user_top' %></td>
+    <td align="center"><%= button_to "プロフィール", {controller: 'user', action: 'top'}, {method: :get} %></td>
     <td align="center"><%= link_to 'ログアウト',logout_path,method: :delete %></td>
   </tr>
+
 </table>

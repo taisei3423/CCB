@@ -24,5 +24,4 @@
     <td align="center"></tb>
   </tr>
 </table>
-
-<p> <%= link_to '戻る', '/' %> </p>
+<%= button_to "戻る", {controller: 'home', action: 'top'}, {method: :get} %>

@@ -1,17 +1,31 @@
 <h1 align="center">進路資料</h1>
 <table width=100% align="center">
-  <tr hight=30% width=100%>
+  <tr>
+    <td align="center"><%= button_to "戻る", {controller: 'home', action: 'top'}, {method: :get, class: :back} %></td>
+  </tr>
+    <tr hight=30% width=100%>
+      <td align="center"></tb>
+      <td align="center"><span class="tag">進学</span></tb>
+  </tr>
+  <tr>
+    <td align="center"><%= button_to "公務員", {controller: 'document3', action: 'top'}, {method: :get, class: :"document"} %></td>
+    <td align="center"><%= button_to "大学", {controller: 'document2', action: 'top'}, {method: :get, class: :"document"} %></td>
+    <td align="center"><%= button_to "就職", {controller: 'document4', action: 'top'}, {method: :get, class: :"document"} %></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr> 
     <td align="center"></tb>
-    <td align="center">進学</tb>
-  </tr>
-  <tr>
-    <td align="center"><%= link_to '公務員', '/document3' %></tb>
-    <td align="center"><%= link_to '大学', '/document2' %></tb>
-    <td align="center"><%= link_to '就職', '/document4' %></tb>
-  </tr>
-  <tr>
-  <td align="center"></tb>
-    <td align="center">専門学校</tb>
+    <td align="center">
+      <%= form_tag('/document', id: 'kubun_form') do %>
+        <p><span class="tag">専門学校</span>
+        <br>
+        <%= collection_select :kubun, :id, Kubun.where(code:30...40), :id, :name %><%= submit_tag '検索' %>
+        </p>
+      <% end %>
+    </td>
   </tr>
 </table>
-<p> <%= link_to '戻る', '/' %> </p>

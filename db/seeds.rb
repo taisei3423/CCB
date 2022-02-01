@@ -11,6 +11,8 @@ require "csv"
 User.create(account: 's20191424', password: 2766, schoolyear: 3, username: '錦織太成', nickname: 'じゃがいも')
 User.create(account: 's20191415', password: 3504, schoolyear: 3, username: '佐藤祐介', nickname: '主将')
 User.create(account: 's20191403', password: 3845, schoolyear: 3, username: '井上文杏希', nickname: 'ニンニク')
+User.create(account: 's20191431', password: 3176, schoolyear: 3, username: '福山沙奈', nickname: 'ぽてと')
+User.create(account: 's00000000', password: 0000, schoolyear: 0, username: '架空の先生', nickname: 'せんせい')
 
 Boardtype.create(threadname: '公務員')
 Boardtype.create(threadname: '就職（製造業）')

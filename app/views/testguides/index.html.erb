@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">検定スケジュール</h1>
+
+<table>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @testguides.each do |testguide| %>
+      <tr>
+      <td><% if testguide.filename.present? %>
+        <%= image_tag "/assets/ #{testguide.filename}" %>
+        <% end %>
+      </td>
+
+      <% if @user.schoolyear == 0 %>
+        <td><%= link_to '編集', edit_testguide_path(testguide) %></td>
+        <td><%= link_to '削除', testguide, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if @user.schoolyear == 0 %>
+  <%= link_to '新規作成', new_testguide_path %>
+<% end %>
+
+<p> <%= link_to '戻る', '/guidance' %> </p>
+<p> <%= link_to 'ホーム', '/' %> </p>

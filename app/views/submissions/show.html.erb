@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>提出物</strong>
+  <%= @submission.title %>
+</p>
+
+<p>
+  <strong>締切</strong>
+  <%= @submission.deadline %>
+</p>
+
+<p>
+  <strong>備考</strong>
+  <%= safe_join(@submission.remarks.split("\n"),tag(:br)) %>
+</p>
+
+<% if @user.schoolyear == 0 %>
+  <p>
+    <strong>学年</strong>
+    <%= @submission.year %>
+  </p>
+<% end %>
+
+<% if @user.schoolyear == 0 %>
+<%= link_to '編集', edit_submission_path(@submission) %> |
+<% end %> 
+
+<%= link_to '戻る', submissions_path %>

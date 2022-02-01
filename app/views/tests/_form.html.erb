@@ -1,0 +1,66 @@
+<%= form_with(model: test) do |form| %>
+  <% if test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= test.errors.count %>つのエラーがあります</h2>
+
+      <ul>
+        <% test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :検定名 %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :締切 %>
+    <%= form.date_select :deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :検定日 %>
+    <%= form.date_select :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :部門 %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="field">
+  <%= form.label :値段 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :１級 %>
+    <%= form.number_field :one %>
+  </div>
+
+  <div class="field">
+    <%= form.label :２級 %>
+    <%= form.number_field :two %>
+  </div>
+
+  <div class="field">
+    <%= form.label :３級 %>
+    <%= form.number_field :three %>
+  </div>
+
+  <div class="field">
+    <%= form.label :担当教員 %>
+    <%= form.text_field :person %>
+  </div>
+
+  <div class="field">
+    <%= form.label :備考・詳細 %>
+    <%= form.text_area :detail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録する"%>
+  </div>
+<% end %>

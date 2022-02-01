@@ -1,0 +1,26 @@
+<%= form_with(model: testguide) do |form| %>
+  <% if testguide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= schedule.errors.count %>つのエラーがあります</h2>
+
+      <ul>
+        <% testguide.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :画像 %>
+    <%= form.file_field :filename %>
+    <% if testguide.filename.present? %>
+      <br>
+      <%= image_tag "/assets/ #{testguide.filename}" %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録する"%>
+  </div>
+<% end %>
