@@ -11,10 +11,20 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_10_11_024605) do
+
   create_table "boards", force: :cascade do |t|
     t.integer "boardtype_id"
     t.string "nickname"
     t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "boardtypes", force: :cascade do |t|
+    t.string "threadname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -25,9 +35,6 @@ ActiveRecord::Schema.define(version: 2021_10_11_024605) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
-  create_table "boardtypes", force: :cascade do |t|
-    t.string "threadname"
 
   create_table "kubuns", force: :cascade do |t|
     t.integer "code"
@@ -51,8 +58,6 @@ ActiveRecord::Schema.define(version: 2021_10_11_024605) do
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "course"
-    t.text "detail"
   end
 
 end

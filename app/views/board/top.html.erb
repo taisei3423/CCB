@@ -1,9 +1,23 @@
-<h1 align="center">掲示板</h1>
+<html>
+ <head>
+    <link rel"stylesheet"href="board.css">
+ </head>
+ <body class="body-color">
+
+</html>
+
+
+
+
+<h1 align="center"><center>掲示板</center></h1>
+<p class="button-size"> <%= link_to '戻る', '/board' %> </p>
 <table width=100% align="center">
   <tr hight=30% width=100%>
-    <td align="center">公務員</tb>
-    <td align="center"> <%= link_to '進学', 'board2' %> </tb>
-    <td align="center"> <%= link_to '就職', 'board3' %> </tb>
+    <br> <td align="center"><%=link_to("公務員",boards_path(boardtype_id: 1),class: "nav-link") %></tb></br>
+    <td align="center"> <%= link_to '進学', 'board2',class: "nav-link" %> </tb>
+    <td align="center",font-size: 100px; > <%= link_to '就職', 'board3',class: "nav-link" %> </tb>
   </tr>
 </table>
-<p> <%= link_to '戻る', '/' %> </p>
+
+</body>
+

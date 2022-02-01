@@ -1,32 +1,81 @@
 <p id="notice"><%= notice %></p>
 
+<html>
+ <head>
+    <link rel"stylesheet"href="board.css">
+ </head>
+<body class="body-color">
 
-<h1> Boards </h1>
+<p hidden>
+<%= @cnt=0 %>
+<p>
 
+<div class="field-color">
+<h1>
+ <center>
+ 掲示板&nbsp;&nbsp;&nbsp;<%= @boardtype%>
+ </center>
+</h1>
+ <p class="button-size"> <%= link_to 'ホーム', '/' %> </p>
+ <p class="button-size"> <%= link_to '戻る', '/board' %> </p>
+
+<p>
+<% if @boards.size == 0 %>
+  <center><em>まだ投稿されていません</em></center>
+<% end %>
+</p>
+
+
+<br></br>
+</div>
+<div class="fixed_header">
 <table>
-  <thead>
-    <tr>
-      <th>Boardtype</th>
-      <th>Nickname</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% @boards.each do |board| %>  
+       <tr>
+        <p hidden>
+        <%= @cnt+=1 %>
+        <% weeks = ["日","月","火","水","木","金","土"] %>
+        <% week = weeks[board.created_at.wday] %>
+        <p>
 
-  <tbody>
-    <% @boards.each do |board| %>
-      <tr>
-        <td><%= board.boardtype_id %></td>
-        <td><%= board.nickname %></td>
-        <td><%= board.comment %></td>
-        <td><%= link_to 'Show', board %></td>
-        <td><%= link_to 'Edit', edit_board_path(board) %></td>
-        <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="post"><%= @cnt %></td>
+        <td class="post" >名前：<font color="blue"><%= board.nickname %></font>&nbsp;&nbsp;&nbsp;<%= board.created_at.strftime("%Y/%m/%d(#{week}) %H:%M:%S") %></td>
       </tr>
+
+      <tr>
+      <td></td>
+      <td class="post" colspan="2"><%= board.comment %></td>
+      </tr>
+  
+      <td><br></td>
     <% end %>
-  </tbody>
 </table>
+</div>
 
-<br>
 
-<%= link_to 'New Comment', new_board_path %>
+<div class="text-field">
+
+ <%= form_tag({controller: :boards, atcion: :create},{method: :post}) do %>
+  
+  <div class="field-position">
+  <br>
+  <%= text_field_tag :nickname ,@user.nickname ,{class:"text-field"} %>
+  </br>
+  <br>
+  <%= text_area_tag  :comment, "",placeholder: "１００文字以内で良識のあるコメントを心掛けてください。" ,maxlength:100 %> 
+  </br>
+
+  <%= hidden_field_tag :boardtype_id, @boardtype_id %>
+  <%= hidden_field_tag :created_at %>
+  
+  <%= submit_tag("投 稿") %>
+</div>
+<% end %>
+</div>
+</body>
+</html>
+
+
+
+
+

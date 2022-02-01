@@ -1,46 +1,46 @@
-<h1 align="center">進学</h1>
+<html>
+ <head>
+    <link rel"stylesheet"href="board.css">
+ </head>
+<body class="body-color">
+<h1 align="center"><center>進学</center></h1>
+<p class="button-size"> <%= link_to 'ホーム', '/' %> </p>
+<p class="button-size"> <%= link_to '戻る', '/board' %> </p>
 <table width=100% align="center">
 <tr hight=30% width=100%>
-  <td align="center"><%=link_to("進学",boards_path(boardtype_id: 1))%></tb>
-  <td align="center">短期大学</tb>
-  <td align="center">四年制大学</tb>
-</tr>
-
-<%= link_to '進学', 'board2' %>
-
-
-<tr>
-  <td align="center">専門学校</tb>
-  <td align="center">大学</tb>
+  <td align="center"><%=link_to("進学全体",boards_path(boardtype_id: 6),class: "nav-link")%></tb>
+  <td align="center"><%=link_to("短期大学",boards_path(boardtype_id: 7),class: "nav-link")%></tb>
+  <td align="center"><%=link_to("四年制大学",boards_path(boardtype_id: 8),class: "nav-link")%></tb>
 </tr>
 
 <tr>
-  <td align="center">看護医療</tb>
-  <td align="center">国公立</tb>
+  <td align="center" class="nav-link">専門学校</tb>
+  <td align="center"><%=link_to("大学＜国公立＞",boards_path(boardtype_id: 14),class: "nav-link")%></tb>
 </tr>
 
 <tr>
-  <td align="center">専門学校</tb>
-  <td align="center">大学</tb>
+  <td align="center"><%=link_to("看護医療",boards_path(boardtype_id: 9),class: "nav-link")%></tb>
+  <td align="center"><%=link_to("大学＜私立＞",boards_path(boardtype_id: 15),class: "nav-link")%></tb>
 </tr>
 
 <tr>
-  <td align="center">商業・情報</tb>
-  <td align="center">私立</tb>
+  <td align="center"><%=link_to("情報・ＩＴ",boards_path(boardtype_id: 10),class: "nav-link")%></tb>
+  
 </tr>
 
 <tr>
-  <td align="center">ファッション</tb>
+  <td align="center"><%=link_to("ビジネス・語学",boards_path(boardtype_id: 11),class: "nav-link")%></tb>
 </tr>
 
 <tr>
-  <td align="center">理美容・食品・栄養</tb>
+  <td align="center"><%=link_to("理美容・食品・栄養",boards_path(boardtype_id: 12),class: "nav-link")%></tb>
 </tr>
 
 <tr>
-  <td align="center">その他</tb>
+  <td align="center"><%=link_to("その他",boards_path(boardtype_id: 13),class: "nav-link")%></tb>
 </tr>
 
 </table>
-<p> <%= link_to 'ホーム', '/' %> </p>
-<p> <%= link_to '戻る', '/board' %> </p>
+
+</body>
+</html>

@@ -6,7 +6,10 @@ class BoardsController < ApplicationController
   def index
     @user = current_user
     @boardtype_id = params[:boardtype_id]
-    @boards = Board.where(boardtype_id: @boardtype_id).order(credated_at: "ASC")
+    @boards = Board.where(boardtype_id: @boardtype_id).order(created_at: "ASC")
+    @boardtype = Boardtype.find(@boardtype_id).threadname
+    
+
   end
 
   # GET /boards/1 or /boards/1.json
@@ -28,11 +31,17 @@ class BoardsController < ApplicationController
     @board.comment = params[:comment]
     @board.nickname = params[:nickname]
     @board.boardtype_id = params[:boardtype_id]
+    @board.created_at = params[:created_at]
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: "Board was successfully created." }
-        format.json { render :show, status: :created, location: @board }
+        @user = current_user
+        @boardtype_id = params[:boardtype_id]
+        @boards = Board.where(boardtype_id: @boardtype_id).order(credated_at: "ASC")
+        @boardtype = Boardtype.find(@boardtype_id).threadname
+
+        format.html { render :index, notice: "Board was successfully created." }
+        format.json { render :index, status: :created, location: @board }
       end
     end
   end

@@ -15,5 +15,10 @@
   <%= @board.comment %>
 </p>
 
+<p>
+  <strong>Created_at:</strong>
+  <%= @board.created_at %>
+</p>
+
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>

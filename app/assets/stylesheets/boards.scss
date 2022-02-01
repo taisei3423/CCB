@@ -1,3 +1,70 @@
 // Place all the styles related to the boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+center{
+    font-size: 190%;
+    //background-color: #00FFFF;
+}
+
+.post{
+ font-size: 160%;
+}
+
+textarea{
+    width:500px;
+    height:120px;
+    font-size: 140%; 
+    background-color: #ffffff;
+}
+
+html,body{
+    height: 100%;
+}
+
+.fixed_header{
+    height: 65%;
+    overflow-y: scroll;
+}
+
+.ka{
+    height: 130px;
+}
+
+.text-field{
+    font-size: 120%;  
+    height: 35%;
+
+}  
+
+.nav-link{
+    font-size: 230%;
+}
+
+.button-size{
+    font-size: 150%;
+}
+
+
+.body-color{
+    background-color: #EEEEEE;
+}
+
+.btn {
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+/*html{
+    background-color: #00FFFF;
+}*/
+
+/*.field-color{
+    background-color: #00FFFF;
+}*/
+
+
+   

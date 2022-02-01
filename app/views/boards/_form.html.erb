@@ -1,4 +1,6 @@
 <%= form_with(model: board) do |form| %>
+  <%= validates :nickname, {lengh: {maximum: 8}} %>
+ 
   <% if board.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
@@ -11,9 +13,6 @@
     </div>
   <% end %>
 
- 
- 
-
   <div class="field">
     <%= form.label :nickname %>
     <%= form.text_field :nickname %>
@@ -24,8 +23,6 @@
     <%= form.text_area :comment %>
   </div>
   
-  
-
   <div class="actions">
     <%= form.submit %>
   </div>

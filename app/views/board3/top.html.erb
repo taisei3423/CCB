@@ -1,16 +1,29 @@
-<h1 align="center">就職</h1>
+<html>
+ <head>
+    <link rel"stylesheet"href="board.css">
+ </head>
+ <body class="body-color">
+ </body>
+</html>
+
+</html>
+
+<h1 align="center"><center>就職</center></h1>
+<p class="button-size"> <%= link_to 'ホーム', '/' %> </p>
+<p class="button-size"> <%= link_to '戻る', '/board' %> </p>
+
 
 <table width=100% align="center">
-  <tr hight=30% width=100%>
-    <td align="center">製造</td>
-    <td align="center">事務</td>
-  </tr>
 
+ <tr class="ka"></tr>
+  <tr height=30% width=100%>
+    <td align="center"><%=link_to("製造",boards_path(boardtype_id: 2),class: "nav-link")%></td> 
+    <td align="center"><%=link_to("事務",boards_path(boardtype_id: 3),class: "nav-link")%></td>
+  </tr>
+  <tr class="ka"></tr>
   <tr>
-    <td align="center">IT</td>
-    <td align="center">小売り</td>
+    <td align="center"><%=link_to("ＩＴ",boards_path(boardtype_id: 4),class: "nav-link")%></td>
+    <td align="center"><%=link_to("小売",boards_path(boardtype_id: 5),class: "nav-link")%></td>
   </tr>
 </table>
 
-<p> <%= link_to 'ホーム', '/' %> </p>
-<p> <%= link_to '戻る', '/board' %> </p>
